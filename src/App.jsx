@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
@@ -9,7 +9,7 @@ import Logout from "./components/Logout";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="home" element={<Home />} />
@@ -20,7 +20,7 @@ function App() {
         </Route>
         <Route exact path="/login" element={<Login />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
