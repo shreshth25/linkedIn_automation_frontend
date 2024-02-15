@@ -5,16 +5,19 @@ import Sidebar from "./Sidebar";
 import { useEffect } from "react";
 
 function Layout() {
+    const [sidebarVisible, setSidebarVisible] = useState(false);
     const navigate = useNavigate()
     useEffect(()=>{
         const data = localStorage.getItem('automation_linkedin')
         if(!data)
-        navigate('/login')
+          navigate('/login')
+        else
+          setSidebarVisible(true);
     })
   return (
     <div className="wrapper">
         <Navbar/>
-        <Sidebar/>
+        {sidebarVisible && <Sidebar />}
         <div className="content-wrapper">
           <div className="content-header">
             <div className="container-fluid">
