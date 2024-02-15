@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const Profile = () => {
+  const url = import.meta.env.VITE_BACKEND_URL 
   const [userData, setUserData] = useState([]);
   const data = JSON.parse(localStorage.getItem("automation_linkedin"));
   const main_data = {
@@ -9,7 +10,7 @@ const Profile = () => {
 
   const getProfile = async () => {
     const response = await fetch(
-      "http://localhost:3000/api/auth/linkedin/profile",
+      url+"api/auth/linkedin/profile",
       {
         method: "POST",
         headers: {

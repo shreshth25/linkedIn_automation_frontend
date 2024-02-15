@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Confetti from 'react-confetti';
 const CreatePost = () => {
+    const url = import.meta.env.VITE_BACKEND_URL
     const [text, setText] = useState('')
     const data = JSON.parse(localStorage.getItem("automation_linkedin"))
     const [isSuccess, setIsSuccess] = useState(false);
@@ -23,7 +24,7 @@ const CreatePost = () => {
             'user_id': data['sub'],
             'text': text
         }
-        const response = await fetch('http://localhost:3000/api/auth/linkedin/createPost',{
+        const response = await fetch(url+'api/auth/linkedin/createPost',{
             method: "POST",
             headers: {
                 'Content-Type':'application/json',

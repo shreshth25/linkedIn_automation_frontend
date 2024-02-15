@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
-
+    const url = import.meta.env.VITE_BACKEND_URL
     const navigate = useNavigate()
     useEffect(()=>{
         const data = localStorage.getItem('automation_linkedin')
@@ -11,7 +11,7 @@ const Login = () => {
     })
   const handleLogin = async()=>
   {
-    const response = await fetch('http://localhost:3000/api/auth/linkedin/authorize',{
+    const response = await fetch(url+'api/auth/linkedin/authorize',{
         method:"GET"
     })
     const data = await response.json()
