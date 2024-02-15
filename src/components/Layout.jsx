@@ -2,7 +2,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Layout() {
     const [sidebarVisible, setSidebarVisible] = useState(false);
