@@ -25,6 +25,7 @@ const Logout = () => {
   useEffect(()=>{
     getProfile()
     localStorage.removeItem('automation_linkedin')
+    localStorage.removeItem('driver_shown')
 
     navigate("/login")
   })
